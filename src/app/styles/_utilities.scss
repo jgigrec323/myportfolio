@@ -1,0 +1,18 @@
+.scrollIndicator {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    background-color: $blue;
+    color: $black;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 20px;
+    bottom: 0%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

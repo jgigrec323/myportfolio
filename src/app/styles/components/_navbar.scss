@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .burger {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        cursor: pointer;
+        & div {
+            background-color: $blue;
+            min-width: 4.5rem;
+            min-height: 5px;
+        }
+    }
+}

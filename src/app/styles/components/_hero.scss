@@ -1,0 +1,20 @@
+.hero {
+    margin-top: 2rem;
+    position: relative;
+    height: calc(100vh - 2rem - 11rem);
+    & .mainText {
+        display: inline;
+        font-size: 13.5rem;
+        line-height: 14rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        & span {
+            font-style: italic;
+        }
+    }
+    & .btn {
+        @include button(true);
+        margin-left: 3rem;
+        transform: translateY(-25%);
+    }
+}

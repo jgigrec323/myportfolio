@@ -1,0 +1,13 @@
+@mixin button($capitalize: false) {
+    background-color: $blue;
+    border: none;
+    border-radius: 5rem;
+    font-weight: bold;
+    font-family: "Futura";
+    font-size: 4rem;
+    padding: 1rem 3rem;
+    font-weight: lighter;
+    @if $capitalize {
+        text-transform: uppercase;
+    }
+}
