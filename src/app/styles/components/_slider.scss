@@ -1,0 +1,56 @@
+.outer {
+  margin-top: 5rem;
+  overflow-x: hidden;
+  .slider {
+    display: flex;
+    gap: 10rem;
+    width: 400vw;
+    section {
+      height: 100vh;
+      &:first-child {
+        margin-right: 15rem;
+      }
+      &.text {
+        padding-top: 7rem;
+        font-size: 4rem;
+        width: 455px;
+      }
+      & .inner {
+        margin: 7rem;
+        padding: 2rem 5rem;
+        background-color: rgba($blue, $alpha: 0.21);
+        position: relative;
+        width: 57rem;
+        height: calc(100% - 14rem);
+        border-radius: 15px;
+        & .projectTitle,
+        .projectYear {
+          font-weight: normal;
+        }
+        & .projectTitle {
+          font-size: 7.5rem;
+        }
+        & .projectYear {
+          font-size: 4rem;
+        }
+        & .projectImage {
+          margin: 2rem auto;
+          position: relative;
+          & img {
+            position: relative !important;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        & .projectActions {
+          display: flex;
+          justify-content: flex-end;
+          & .btn {
+            @include button(false);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

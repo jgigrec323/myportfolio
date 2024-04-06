@@ -1,0 +1,15 @@
+section.skills {
+  margin-top: 7rem;
+  & .mySkills {
+    padding: 0 10rem;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+    row-gap: 7rem;
+    place-items: center;
+    & img {
+      object-fit: contain;
+    }
+  }
+}

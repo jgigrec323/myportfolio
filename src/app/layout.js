@@ -1,4 +1,6 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import SmoothScroll from "./components/SmoothScroll";
 import "./globals.css";
 import "./styles/index.scss"
 
@@ -13,17 +15,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="mainBg">
-          <div className="radialgradient">
-
-
-            <Navbar></Navbar>
-            {children}
+        <SmoothScroll>
+          <div className="mainBg">
+            <div className="radialgradient">
+              <Navbar></Navbar>
+              {children}
+              <Footer></Footer>
+            </div>
           </div>
-
-        </div>
-
+        </SmoothScroll>
       </body>
+
     </html>
   );
 }
