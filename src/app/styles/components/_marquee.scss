@@ -1,5 +1,11 @@
 .marqueeContainer {
-  width: fit-content;
-  display: flex;
-  gap: 5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  & .marquee {
+    font-size: 0;
+    & .clippedText {
+      display: inline-block;
+      margin-right: 10rem;
+    }
+  }
 }

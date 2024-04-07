@@ -1,0 +1,54 @@
+footer {
+    margin-top: 15rem;
+    & .bottom {
+        background-color: $blue;
+        border-top-left-radius: 14rem;
+        border-top-right-radius: 14rem;
+        padding: 7rem 7rem 5rem 7rem;
+        color: $black;
+        & .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & .left {
+                & .logo {
+                    width: fit-content;
+                    & img {
+                        width: 100%;
+                    }
+                }
+                & a {
+                    font-weight: bold;
+                    font-style: italic;
+                    text-transform: uppercase;
+                    font-size: 5.5rem;
+                }
+            }
+            & .right {
+                & svg {
+                    width: 4rem;
+                    cursor: pointer;
+                    &:not(:last-child) {
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+        & p {
+            margin-top: 10rem;
+            font-size: 2.5rem;
+        }
+    }
+    & .jumpBackUp {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        font-size: 10rem;
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+        & p {
+            display: inline;
+            cursor: pointer;
+        }
+    }
+}

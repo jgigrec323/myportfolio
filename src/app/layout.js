@@ -1,6 +1,9 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import SmoothScroll from "./components/SmoothScroll";
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 import "./globals.css";
 import "./styles/index.scss"
 
@@ -20,8 +23,9 @@ export default function RootLayout({ children }) {
             <div className="radialgradient">
               <Navbar></Navbar>
               {children}
-              <Footer></Footer>
+
             </div>
+            <Footer></Footer>
           </div>
         </SmoothScroll>
       </body>
