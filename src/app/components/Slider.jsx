@@ -9,6 +9,44 @@ function Slider() {
     const sliderRef = useRef(null)
     const descRef = useRef(null)
 
+    const projects = [
+        {
+            name: "ProCard",
+            year: 2024,
+            img: "/images/procard/1.png"
+        },
+        {
+            name: "GEGAPOS",
+            year: 2023,
+            img: "/images/gegapos/1.png"
+        },
+        {
+            name: "Kac",
+            year: 2023,
+            img: "/images/kac/1.png"
+        },
+        {
+            name: "Hadja Maimouna",
+            year: 2023,
+            img: "/images/hadjaM/1.png"
+        },
+        {
+            name: "Village Gandal",
+            year: 2023,
+            img: "/images/villagegandal/1.png"
+        },
+        {
+            name: "Dreaminati Store",
+            year: 2023,
+            img: "/images/dreaminati/1.png"
+        },
+        {
+            name: "Boundless",
+            year: 2024,
+            img: "/images/boundless/1.png"
+        },
+    ]
+
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
         const sections = gsap.utils.toArray(".slider section");
@@ -51,6 +89,7 @@ function Slider() {
 
             }
         })
+        console.log(projects.length)
     })
     return (
         <div className="outer">
@@ -60,18 +99,22 @@ function Slider() {
                         My expertise has played a pivotal <br /> role in bringing impactful projects to <br /> life. Dive into my curated selection <br /> and discover what I can achieve.
                     </p>
                 </section>
-                <section>
-                    <div className="inner">
-                        <h3 className="projectTitle">ProCard</h3>
-                        <h4 className="projectYear">2024</h4>
-                        <div className="projectImage" >
-                            <Image src="/images/procard/1.png" fill={true} alt='Project 1'></Image>
-                        </div>
-                        <div className="projectActions">
-                            <button className="btn">More about this</button>
-                        </div>
-                    </div>
-                </section>
+                {
+                    projects.map((project, index) => (
+                        <section key={index}>
+                            <div className="inner">
+                                <h3 className="projectTitle">{project.name}</h3>
+                                <h4 className="projectYear">{project.year}</h4>
+                                <div className="projectImage">
+                                    <Image src={project.img} fill={true} alt={`Project ${index + 1}`} />
+                                </div>
+                                <div className="projectActions">
+                                    <button className="btn">More about this</button>
+                                </div>
+                            </div>
+                        </section>
+                    ))
+                }
                 <section>
                     <div className="inner">
                         <h3 className="projectTitle">ProCard</h3>

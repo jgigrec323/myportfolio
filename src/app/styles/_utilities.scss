@@ -48,6 +48,9 @@
 
 *::-webkit-scrollbar-thumb {
   background-color: $blue;
+  &:hover {
+    background-color: $gradient-blue;
+  }
 }
 
 *::-webkit-scrollbar-track {

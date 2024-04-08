@@ -1,6 +1,7 @@
 .marqueeContainer {
   overflow: hidden;
   white-space: nowrap;
+  transform: translateY(22px);
   & .marquee {
     font-size: 0;
     & .clippedText {
