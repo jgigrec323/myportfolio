@@ -5,9 +5,14 @@
     & .mainText {
         display: inline;
         font-size: 13.5rem;
-        line-height: 14rem;
+        line-height: 12rem;
         text-transform: uppercase;
         font-weight: bold;
+        opacity: 0;
+        &>div {
+            overflow: hidden;
+            height: fit-content;
+        }
         & span {
             font-style: italic;
         }
@@ -15,6 +20,18 @@
     & .btn {
         @include button(true);
         margin-left: 3rem;
-        transform: translateY(-25%);
+        transform: translateY(-45%);
+        overflow: hidden;
+        position: relative;
+        width: 30rem;
+        height: 7rem;
+        opacity: 0;
+        & div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            height: 100%;
+        }
     }
 }
