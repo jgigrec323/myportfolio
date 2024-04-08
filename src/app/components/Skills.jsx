@@ -1,11 +1,47 @@
-import React from 'react'
+"use client"
+import React, { useRef } from 'react'
 import Image from 'next/image'
-
+import gsap from "gsap"
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Skills() {
+    const textRef = useRef(null)
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const logos = gsap.utils.toArray(".mySkills .skillLogo");
+
+        gsap.from(textRef.current, {
+            y: 50,
+            duration: 0.4,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: textRef.current,
+                start: "top 80%",
+                toggleActions: 'play none none reverse',
+
+            }
+        })
+        logos.forEach((logo, index) => {
+            gsap.from(logo, {
+                y: 50,
+                duration: 0.4,
+                opacity: 0,
+                stagger: 0.05,
+
+                scrollTrigger: {
+                    trigger: logo,
+                    start: "top 90%",
+                    toggleActions: 'play none none reverse',
+
+                }
+            })
+        });
+
+    })
     return (
         <section className='skills'>
-            <p className="text">
+            <p className="text" ref={textRef}>
                 I am skilled in the following <br /> technologies and disciplines.
             </p>
             <div className="mySkills">

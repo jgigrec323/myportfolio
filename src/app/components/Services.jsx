@@ -1,9 +1,10 @@
 import React from 'react'
+import SectionTitle from './SectionTitle'
 
 function Services() {
     return (
         <section className='services'>
-            <h1 className='sectionTitle'>Services</h1>
+            <SectionTitle title={"Services"}></SectionTitle>
             <div className="allServices">
                 <div className="serviceDivider"></div>
                 <div className="singleService">

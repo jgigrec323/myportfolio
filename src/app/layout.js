@@ -6,6 +6,7 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 import "./globals.css";
 import "./styles/index.scss"
+import Cursor from "./components/Cursor";
 
 
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Cursor></Cursor>
         <SmoothScroll>
           <div className="mainBg">
             <div className="radialgradient">

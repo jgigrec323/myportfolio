@@ -1,0 +1,10 @@
+.cursor {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  background-color: $blue;
+  z-index: 99;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}

@@ -16,6 +16,7 @@ function Hero() {
         if (mainText.current) {
             const text = new SplitType(mainText.current, { types: 'words,chars' })
 
+
             gsap.from(text.chars, {
                 yPercent: 100,
                 rotate: "20deg",
@@ -23,14 +24,30 @@ function Hero() {
                 duration: 0.4,
                 stagger: 0.05
             })
-            gsap.from(btn.current, {
-                opacity: 0,
-                delay: 2.9
 
+            text.chars.forEach((letter, index) => {
+
+                letter.addEventListener("mouseenter", () => {
+                    gsap.to(letter, {
+                        scale: 1.2,
+                        ease: "back.out(1.7)",
+                    })
+                })
+                letter.addEventListener("mouseleave", () => {
+                    gsap.to(letter, {
+                        scale: 1,
+                        ease: "back.out(1.7)",
+                    })
+                })
             })
 
-        }
 
+        }
+        gsap.from(btn.current, {
+            opacity: 0,
+            delay: 2.9
+
+        })
 
         const tl = gsap.timeline({ paused: true });
 

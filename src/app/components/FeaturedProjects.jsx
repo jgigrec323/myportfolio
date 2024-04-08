@@ -1,10 +1,11 @@
 import React from 'react'
 import Slider from './Slider'
+import SectionTitle from './SectionTitle'
 
 function FeaturedProjects() {
     return (
         <section className='featuredProjects'>
-            <h1 className='sectionTitle'>Featured Projects</h1>
+            <SectionTitle title={"Featured Projects"}></SectionTitle>
             <Slider></Slider>
         </section>
     )

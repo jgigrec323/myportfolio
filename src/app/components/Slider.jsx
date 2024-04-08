@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
 function Slider() {
     const sliderRef = useRef(null)
+    const descRef = useRef(null)
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -39,11 +40,22 @@ function Slider() {
                     }
                 })
         })
+        gsap.from(descRef.current, {
+            y: 50,
+            duration: 0.4,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: descRef.current,
+                start: "top 80%",
+                toggleActions: 'play none none reverse',
+
+            }
+        })
     })
     return (
         <div className="outer">
             <div className="slider" ref={sliderRef}>
-                <section className="text">
+                <section className="text" ref={descRef}>
                     <p>
                         My expertise has played a pivotal <br /> role in bringing impactful projects to <br /> life. Dive into my curated selection <br /> and discover what I can achieve.
                     </p>
