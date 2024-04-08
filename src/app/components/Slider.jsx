@@ -27,7 +27,7 @@ function Slider() {
         tl.to(sliderRef.current, {
             xPercent: -66,
         });
-        sections.forEach((stop, index) => {
+        sections.forEach((stop) => {
             tl
                 .from(stop, {
                     xPercent: 50,

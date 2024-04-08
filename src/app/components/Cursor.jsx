@@ -1,6 +1,7 @@
 "use client"
 import { useRef } from "react"
 import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
 
 
 
@@ -27,8 +28,32 @@ function Cursor() {
         });
     }
 
+    useGSAP(() => {
+        const scaleUp = document.querySelectorAll(".scaleUp")
+
+        scaleUp.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                cursorRef.current.style.mixBlendMode = "initial"
+                cursorRef.current.firstChild.style.opacity = 1
+                gsap.to(cursorRef.current, {
+                    scale: 5
+                })
+
+            })
+            el.addEventListener("mouseleave", () => {
+                cursorRef.current.style.mixBlendMode = "difference"
+                cursorRef.current.firstChild.style.opacity = 0
+                gsap.to(cursorRef.current, {
+                    scale: 1
+                })
+            })
+        });
+    })
+
     return (
-        <div className='cursor' ref={cursorRef}></div>
+        <div className='cursor' ref={cursorRef}>
+            <p>Let's <br /> Talk</p>
+        </div>
     )
 }
 

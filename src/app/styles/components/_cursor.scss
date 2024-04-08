@@ -7,4 +7,15 @@
   border-radius: 50%;
   mix-blend-mode: difference;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & p {
+    font-size: 0.5rem;
+    position: relative;
+    color: black;
+    font-weight: normal;
+    font-style: italic;
+    opacity: 0;
+  }
 }
