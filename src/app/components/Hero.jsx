@@ -13,6 +13,7 @@ function Hero() {
         //here simulating the entrance animation
         mainText.current.style.opacity = 1
         btn.current.style.opacity = 1
+        document.querySelector('.scrollIndicator').style.opacity = 1
         if (mainText.current) {
             const text = new SplitType(mainText.current, { types: 'words,chars' })
 
@@ -22,7 +23,8 @@ function Hero() {
                 rotate: "20deg",
                 scaleY: 0.5,
                 duration: 0.4,
-                stagger: 0.05
+                stagger: 0.05,
+                delay: 0.5
             })
 
             text.chars.forEach((letter, index) => {
@@ -45,7 +47,12 @@ function Hero() {
         }
         gsap.from(btn.current, {
             opacity: 0,
-            delay: 2.9
+            delay: 3.2
+
+        })
+        gsap.from(".scrollIndicator", {
+            opacity: 0,
+            delay: 3.5
 
         })
 

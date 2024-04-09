@@ -5,6 +5,9 @@ import { useRef } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
+import { Tilt } from 'react-next-tilt';
+
+
 function Slider() {
     const sliderRef = useRef(null)
     const descRef = useRef(null)
@@ -48,6 +51,7 @@ function Slider() {
     ]
 
     useGSAP(() => {
+
         gsap.registerPlugin(ScrollTrigger);
         const sections = gsap.utils.toArray(".slider section");
 
@@ -101,80 +105,27 @@ function Slider() {
                 </section>
                 {
                     projects.map((project, index) => (
+
+
+
                         <section key={index}>
-                            <div className="inner">
-                                <h3 className="projectTitle">{project.name}</h3>
-                                <h4 className="projectYear">{project.year}</h4>
-                                <div className="projectImage">
-                                    <Image src={project.img} fill={true} alt={`Project ${index + 1}`} />
+                            <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} spotGlareEnable={false} lineGlareEnable={false} lineGlareBlurEnable={false}>
+                                <div className="inner">
+                                    <h3 className="projectTitle">{project.name}</h3>
+                                    <h4 className="projectYear">{project.year}</h4>
+                                    <div className="projectImage">
+                                        <Image src={project.img} fill={true} alt={`Project ${index + 1}`} />
+                                    </div>
+                                    <div className="projectActions">
+                                        <button className="btn">More about this</button>
+                                    </div>
                                 </div>
-                                <div className="projectActions">
-                                    <button className="btn">More about this</button>
-                                </div>
-                            </div>
+                            </Tilt>
                         </section>
                     ))
                 }
-                <section>
-                    <div className="inner">
-                        <h3 className="projectTitle">ProCard</h3>
-                        <h4 className="projectYear">2024</h4>
-                        <div className="projectImage" >
-                            <Image src="/images/procard/1.png" fill={true} alt='Project 1'></Image>
-                        </div>
-                        <div className="projectActions">
-                            <button className="btn">More about this</button>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div className="inner">
-                        <h3 className="projectTitle">ProCard</h3>
-                        <h4 className="projectYear">2024</h4>
-                        <div className="projectImage" >
-                            <Image src="/images/procard/1.png" fill={true} alt='Project 1'></Image>
-                        </div>
-                        <div className="projectActions">
-                            <button className="btn">More about this</button>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div className="inner">
-                        <h3 className="projectTitle">ProCard</h3>
-                        <h4 className="projectYear">2024</h4>
-                        <div className="projectImage" >
-                            <Image src="/images/procard/1.png" fill={true} alt='Project 1'></Image>
-                        </div>
-                        <div className="projectActions">
-                            <button className="btn">More about this</button>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div className="inner">
-                        <h3 className="projectTitle">ProCard</h3>
-                        <h4 className="projectYear">2024</h4>
-                        <div className="projectImage" >
-                            <Image src="/images/procard/1.png" fill={true} alt='Project 1'></Image>
-                        </div>
-                        <div className="projectActions">
-                            <button className="btn">More about this</button>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div className="inner">
-                        <h3 className="projectTitle">ProCard</h3>
-                        <h4 className="projectYear">2024</h4>
-                        <div className="projectImage" >
-                            <Image src="/images/procard/1.png" fill={true} alt='Project 1'></Image>
-                        </div>
-                        <div className="projectActions">
-                            <button className="btn">More about this</button>
-                        </div>
-                    </div>
-                </section>
+
+
             </div>
         </div>
     )
