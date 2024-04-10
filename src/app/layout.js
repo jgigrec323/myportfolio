@@ -7,7 +7,7 @@ config.autoAddCss = false
 import "./globals.css";
 import "./styles/index.scss"
 import Cursor from "./components/Cursor";
-
+import { AppProvider } from "./context/AppContext";
 
 
 export const metadata = {
@@ -19,19 +19,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Cursor></Cursor>
-        <SmoothScroll>
-          <div className="mainBg">
-            <div className="radialgradient">
-              <Navbar></Navbar>
-              {children}
+        <AppProvider>
 
+
+          <Cursor></Cursor>
+          <SmoothScroll>
+            <div className="mainBg">
+              <div className="radialgradient">
+                <Navbar></Navbar>
+                {children}
+
+              </div>
+              <Footer></Footer>
             </div>
-            <Footer></Footer>
-          </div>
-        </SmoothScroll>
+          </SmoothScroll>
+        </AppProvider>
       </body>
-
     </html>
   );
 }

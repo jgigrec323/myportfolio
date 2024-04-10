@@ -25,7 +25,7 @@ function Services() {
         });
     })
     return (
-        <section className='services'>
+        <section id='services' className='services'>
             <SectionTitle title={"Services"}></SectionTitle>
             <div className="allServices">
                 <div className="serviceDivider"></div>

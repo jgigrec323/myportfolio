@@ -42,7 +42,7 @@ function Skills() {
 
     })
     return (
-        <section className='skills'>
+        <section id='skills' className='skills'>
             <p className="text" ref={textRef}>
                 I am skilled in the following <br /> technologies and disciplines.
             </p>

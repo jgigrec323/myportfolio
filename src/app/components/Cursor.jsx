@@ -2,11 +2,14 @@
 import { useRef } from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import { useAppContext } from "../context/AppContext"
 
 
 
 function Cursor() {
     const cursorRef = useRef(null)
+    const { isMenuOpen } = useAppContext();
+
     const moveCursor = (e) => {
         if (cursorRef.current) {
             const cursorWidth = cursorRef.current.offsetWidth;
@@ -48,7 +51,29 @@ function Cursor() {
                 })
             })
         });
-    })
+
+        if (isMenuOpen) {
+            const navLinks = document.querySelectorAll(".menu .navLink")
+            navLinks.forEach(el => {
+
+                el.addEventListener("mouseenter", () => {
+
+                    gsap.to(cursorRef.current, {
+                        scale: 7
+                    })
+
+                })
+                el.addEventListener("mouseleave", () => {
+
+                    gsap.to(cursorRef.current, {
+                        scale: 1
+                    })
+                })
+            });
+        }
+
+
+    }, [isMenuOpen])
 
     return (
         <div className='cursor' ref={cursorRef}>

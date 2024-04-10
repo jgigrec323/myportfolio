@@ -4,7 +4,7 @@ import SectionTitle from './SectionTitle'
 
 function FeaturedProjects() {
     return (
-        <section className='featuredProjects'>
+        <section id='projects' className='featuredProjects'>
             <SectionTitle title={"Featured Projects"}></SectionTitle>
             <Slider></Slider>
         </section>
