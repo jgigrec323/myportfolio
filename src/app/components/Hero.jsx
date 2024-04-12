@@ -20,6 +20,7 @@ function Hero() {
 
             gsap.from(text.chars, {
                 yPercent: 100,
+                opacity: 0,
                 rotate: "20deg",
                 scaleY: 0.5,
                 duration: 0.4,

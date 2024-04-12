@@ -35,3 +35,31 @@ section.services {
     }
   }
 }
+
+@media screen and (max-width: 780px) {
+  section.services {
+    & .allServices {
+      & .singleService {
+        position: relative;
+        justify-content: center;
+        & .serviceNo {
+          position: absolute;
+          top: -20%;
+          left: 0;
+        }
+        & .serviceInfos {
+          width: fit-content;
+          gap: 1.5rem;
+          & h3 {
+            font-size: 6rem;
+          }
+          & .process {
+            & span {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

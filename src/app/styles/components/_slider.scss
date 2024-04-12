@@ -78,3 +78,25 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .outer {
+    overflow: auto;
+    .slider {
+      flex-direction: column;
+      width: 100vw;
+      & section {
+        width: calc(100vw - 8rem);
+        height: fit-content;
+        &:first-child {
+          margin-right: 0;
+        }
+        &.text {
+          & p {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+} //TODO: hier i have to fix the js first

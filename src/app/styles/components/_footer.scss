@@ -63,3 +63,59 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: 1100px) {
+  footer {
+    margin-top: 5rem;
+    & .bottom {
+      padding: 7rem 3rem 20rem 3rem;
+      & .wrapper {
+      }
+      & p {
+        font-size: 1.5rem;
+      }
+    }
+    & .jumpBackUp {
+      & p {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  footer {
+    margin-top: 5rem;
+    & .bottom {
+      padding: 7rem 3rem 20rem 3rem;
+      & .wrapper {
+        flex-direction: column;
+        align-items: start;
+        & .left {
+          & a {
+            font-size: 3.5rem;
+          }
+        }
+        & .right {
+          & svg {
+            width: 2.5rem;
+            &:not(:last-child) {
+              margin-right: 2rem;
+            }
+          }
+        }
+      }
+      & p {
+        font-size: 1.5rem;
+      }
+    }
+    & .jumpBackUp {
+      border: none;
+      & p {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+//TODO:here have to fix why theres a white border around my div

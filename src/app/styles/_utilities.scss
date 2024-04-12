@@ -11,10 +11,8 @@
   justify-content: center;
   align-items: center;
   line-height: 20px;
-  bottom: 0%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 100%);
   opacity: 0;
 }
 
@@ -65,4 +63,19 @@
 
 .down {
   animation: down 2s infinite;
+}
+
+@media screen and (max-width: 780px) {
+  .sectionTitle {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .scrollIndicator {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
 }

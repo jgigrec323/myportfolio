@@ -1,3 +1,9 @@
 section.featuredProjects {
   margin-top: 13rem;
 }
+
+@media screen and (max-width: 780px) {
+  section.featuredProjects {
+    margin-top: 5rem;
+  }
+}

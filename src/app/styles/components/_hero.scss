@@ -1,37 +1,89 @@
 .hero {
-    margin-top: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  height: calc(100vh - 2rem - 11rem);
+  & .mainText {
+    display: inline;
+    font-size: 13.5rem;
+    line-height: 12rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    & > div {
+      overflow: hidden;
+      height: fit-content;
+    }
+    & span {
+      font-style: italic;
+    }
+  }
+  & .btn {
+    @include button(true);
+    margin-left: 3rem;
+    transform: translateY(-45%);
+    overflow: hidden;
     position: relative;
-    height: calc(100vh - 2rem - 11rem);
+    width: 30rem;
+    height: 7rem;
+    opacity: 0;
+    & div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
     & .mainText {
-        display: inline;
-        font-size: 13.5rem;
-        line-height: 12rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        opacity: 0;
-        &>div {
-            overflow: hidden;
-            height: fit-content;
-        }
-        & span {
-            font-style: italic;
-        }
+      display: block;
+      font-size: 9rem;
+      line-height: 8rem;
+      & .word {
+        overflow: hidden;
+      }
     }
     & .btn {
-        @include button(true);
-        margin-left: 3rem;
-        transform: translateY(-45%);
-        overflow: hidden;
-        position: relative;
-        width: 30rem;
-        height: 7rem;
-        opacity: 0;
-        & div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            height: 100%;
-        }
+      width: 20rem;
+      height: 5rem;
     }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    & .mainText {
+      font-size: 8rem;
+      line-height: 7rem;
+    }
+    & .btn {
+      width: 15rem;
+      height: 4rem;
+      transform: translateY(0);
+      margin-left: 0;
+      margin-top: 2rem;
+      width: fit-content;
+      height: fit-content;
+      & div {
+        & .text2 {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero {
+    & .mainText {
+      font-size: 5rem;
+      line-height: inherit !important;
+    }
+    & .btn {
+      font-size: 3rem;
+    }
+  }
 }

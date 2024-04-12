@@ -1,10 +1,23 @@
 .mainBg {
-    background-color: $black;
+  background-color: $black;
+  height: 100%;
 }
 
 .radialgradient {
-    padding: 3rem 5rem;
-    position: relative;
-    height: 100%;
-    background-image: radial-gradient(circle at 50% 50%, #2d3241 0%, #000 100%);
+  padding: 3rem 5rem;
+  position: relative;
+  height: 100%;
+  background-image: radial-gradient(circle at 50% 50%, #2d3241 0%, #000 100%);
+}
+
+@media screen and (max-width: 780px) {
+  .radialgradient {
+    padding: 3rem 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .radialgradient {
+    padding: 2rem 3rem;
+  }
 }

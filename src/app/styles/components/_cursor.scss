@@ -19,3 +19,9 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .cursor {
+    display: none;
+  }
+}
