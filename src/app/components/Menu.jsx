@@ -38,21 +38,23 @@ function Menu() {
                     delay: 0.7
 
                 })
-                linkSplit.chars.forEach((letter) => {
+                if (window.innerWidth >= 1150) {
+                    linkSplit.chars.forEach((letter) => {
 
-                    letter.addEventListener("mouseenter", () => {
-                        gsap.to(letter, {
-                            scale: 1.2,
-                            ease: "back.out(1.7)",
+                        letter.addEventListener("mouseenter", () => {
+                            gsap.to(letter, {
+                                scale: 1.2,
+                                ease: "back.out(1.7)",
+                            })
+                        })
+                        letter.addEventListener("mouseleave", () => {
+                            gsap.to(letter, {
+                                scale: 1,
+                                ease: "back.out(1.7)",
+                            })
                         })
                     })
-                    letter.addEventListener("mouseleave", () => {
-                        gsap.to(letter, {
-                            scale: 1,
-                            ease: "back.out(1.7)",
-                        })
-                    })
-                })
+                }
             });
         }
 

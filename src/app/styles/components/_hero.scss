@@ -36,32 +36,23 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
   .hero {
     & .mainText {
-      display: block;
-      font-size: 9rem;
-      line-height: 8rem;
-      & .word {
-        overflow: hidden;
-      }
-    }
-    & .btn {
-      width: 20rem;
-      height: 5rem;
+      font-size: calc(7vw + 3vh);
+      line-height: calc(6vw + 4vh);
     }
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1150px) {
   .hero {
     & .mainText {
-      font-size: 8rem;
-      line-height: 7rem;
+      display: block;
+      font-size: calc(10vw + 3vh);
+      line-height: calc(7vw + 4vh);
     }
     & .btn {
-      width: 15rem;
-      height: 4rem;
       transform: translateY(0);
       margin-left: 0;
       margin-top: 2rem;
@@ -76,11 +67,33 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   .hero {
     & .mainText {
-      font-size: 5rem;
-      line-height: inherit !important;
+      font-size: calc(8.5vw + 3vh);
+      line-height: calc(6.5vw + 4vh);
+    }
+    & .btn {
+      transform: translateY(0);
+      margin-left: 0;
+      margin-top: 2rem;
+      width: fit-content;
+      height: fit-content;
+      & div {
+        & .text2 {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .hero {
+    height: fit-content;
+    & .mainText {
+      font-size: calc(8vw + 3vh);
+      line-height: calc(6vw + 4vh) !important;
     }
     & .btn {
       font-size: 3rem;

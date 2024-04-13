@@ -8,6 +8,7 @@ function Hero() {
     const text2 = useRef(null);
     const btn = useRef(null);
     const mainText = useRef(null);
+    const mobileBreak = 1150
 
     useGSAP(() => {
         //here simulating the entrance animation
@@ -28,21 +29,23 @@ function Hero() {
                 delay: 0.5
             })
 
-            text.chars.forEach((letter, index) => {
+            if (window.innerWidth >= mobileBreak) {
+                text.chars.forEach((letter) => {
 
-                letter.addEventListener("mouseenter", () => {
-                    gsap.to(letter, {
-                        scale: 1.2,
-                        ease: "back.out(1.7)",
+                    letter.addEventListener("mouseenter", () => {
+                        gsap.to(letter, {
+                            scale: 1.2,
+                            ease: "back.out(1.7)",
+                        })
+                    })
+                    letter.addEventListener("mouseleave", () => {
+                        gsap.to(letter, {
+                            scale: 1,
+                            ease: "back.out(1.7)",
+                        })
                     })
                 })
-                letter.addEventListener("mouseleave", () => {
-                    gsap.to(letter, {
-                        scale: 1,
-                        ease: "back.out(1.7)",
-                    })
-                })
-            })
+            }
 
 
         }
@@ -62,13 +65,15 @@ function Hero() {
         tl.to(text1.current, { yPercent: -103, duration: 0.5, ease: "power2.inOut" })
             .to(text2.current, { yPercent: -120, duration: 0.5, ease: "power2.inOut" }, "-=0.4");
 
-        btn.current.addEventListener("mouseenter", () => {
-            tl.play();
-        });
+        if (window.innerWidth >= mobileBreak) {
+            btn.current.addEventListener("mouseenter", () => {
+                tl.play();
+            });
 
-        btn.current.addEventListener("mouseleave", () => {
-            tl.reverse();
-        });
+            btn.current.addEventListener("mouseleave", () => {
+                tl.reverse();
+            });
+        }
 
         return () => {
             btn.current.removeEventListener("mouseenter", () => {

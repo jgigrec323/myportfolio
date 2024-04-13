@@ -22,21 +22,23 @@ function SectionTitle({ title }) {
                 }
             })
 
-            letters.chars.forEach((letter, index) => {
+            if (window.innerWidth >= 1150) {
+                letters.chars.forEach((letter, index) => {
 
-                letter.addEventListener("mouseenter", () => {
-                    gsap.to(letter, {
-                        scale: 1.2,
-                        ease: "back.out(1.7)",
+                    letter.addEventListener("mouseenter", () => {
+                        gsap.to(letter, {
+                            scale: 1.2,
+                            ease: "back.out(1.7)",
+                        })
+                    })
+                    letter.addEventListener("mouseleave", () => {
+                        gsap.to(letter, {
+                            scale: 1,
+                            ease: "back.out(1.7)",
+                        })
                     })
                 })
-                letter.addEventListener("mouseleave", () => {
-                    gsap.to(letter, {
-                        scale: 1,
-                        ease: "back.out(1.7)",
-                    })
-                })
-            })
+            }
         }
     })
     return (

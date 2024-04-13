@@ -11,7 +11,8 @@ import { Tilt } from 'react-next-tilt';
 function Slider() {
     const sliderRef = useRef(null)
     const descRef = useRef(null)
-
+    const mobileBreak = 1150
+    const isMobile = window.innerWidth >= 768 ? true : false
     const projects = [
         {
             name: "ProCard",
@@ -55,33 +56,58 @@ function Slider() {
         gsap.registerPlugin(ScrollTrigger);
         const sections = gsap.utils.toArray(".slider section");
 
-        let tl = gsap.timeline({
-            defaults: {
-                ease: "none",
-            },
-            scrollTrigger: {
-                trigger: sliderRef.current,
-                pin: true,
-                scrub: 2,
-                end: () => "+=" + sliderRef.current.offsetWidth,
-            },
-        });
-        tl.to(sliderRef.current, {
-            xPercent: -66,
-        });
-        sections.forEach((stop) => {
-            tl
-                .from(stop, {
-                    xPercent: 50,
-                    scale: 1.2,
-                    ease: 'elastic.out(1,1)',
+        const projectWidth = 630;
+        const numProjects = projects.length;
+        const totalWidth = projectWidth * numProjects;
+        const sliderWidth = sliderRef.current.offsetWidth;
+        const xPercentValue = ((totalWidth - sliderWidth) / totalWidth) * 100;
+
+        if (window.innerWidth >= mobileBreak) {
+            let tl = gsap.timeline({
+                defaults: {
+                    ease: "none",
+                },
+                scrollTrigger: {
+                    trigger: sliderRef.current,
+                    pin: true,
+                    scrub: 2,
+                    end: () => "+=" + sliderRef.current.offsetWidth,
+                },
+            });
+            tl.to(sliderRef.current, {
+                xPercent: xPercentValue,
+            });
+            sections.forEach((stop) => {
+                tl
+                    .from(stop, {
+                        xPercent: 50,
+                        scale: 1.2,
+                        ease: 'elastic.out(1,1)',
+                        scrollTrigger: {
+                            trigger: stop,
+                            scrub: 2,
+                            containerAnimation: tl
+                        }
+                    })
+            })
+        } else {
+            const cards = document.querySelectorAll('section.cards')
+
+            cards.forEach(card => {
+                gsap.from(card, {
+                    y: 50,
+                    duration: 0.4,
+                    opacity: 0,
                     scrollTrigger: {
-                        trigger: stop,
-                        scrub: 2,
-                        containerAnimation: tl
+                        trigger: card,
+                        start: "top 90%",
+                        toggleActions: 'play none none reverse',
+
                     }
                 })
-        })
+            });
+        }
+
         gsap.from(descRef.current, {
             y: 50,
             duration: 0.4,
@@ -94,13 +120,13 @@ function Slider() {
             }
         })
         console.log(projects.length)
-    })
+    }, [window.innerWidth])
     return (
         <div className="outer">
             <div className="slider" ref={sliderRef}>
                 <section className="text" ref={descRef}>
                     <p>
-                        My expertise has played a pivotal <br /> role in bringing impactful projects to <br /> life. Dive into my curated selection <br /> and discover what I can achieve.
+                        My expertise has played a pivotal {isMobile && <br />} role in bringing impactful projects to {isMobile && <br />} life. Dive into my curated selection {isMobile && <br />} and discover what I can achieve.
                     </p>
                 </section>
                 {
@@ -108,7 +134,7 @@ function Slider() {
 
 
 
-                        <section key={index}>
+                        <section className='cards' key={index}>
                             <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} spotGlareEnable={false} lineGlareEnable={false} lineGlareBlurEnable={false}>
                                 <div className="inner">
                                     <h3 className="projectTitle">{project.name}</h3>

@@ -2,8 +2,8 @@ section.featuredProjects {
   margin-top: 13rem;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1150px) {
   section.featuredProjects {
-    margin-top: 5rem;
+    margin: 6rem auto;
   }
 }

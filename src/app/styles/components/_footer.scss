@@ -39,6 +39,7 @@ footer {
       }
     }
     & p {
+      text-align: center;
       margin-top: 10rem;
       font-size: 2.5rem;
     }
@@ -64,12 +65,27 @@ footer {
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1150px) {
   footer {
     margin-top: 5rem;
     & .bottom {
       padding: 7rem 3rem 20rem 3rem;
       & .wrapper {
+        gap: 1rem;
+        flex-wrap: wrap;
+        & .left {
+          & a {
+            font-size: 5rem;
+          }
+        }
+        & .right {
+          & svg {
+            width: 2.2rem;
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+          }
+        }
       }
       & p {
         font-size: 1.5rem;
@@ -83,17 +99,16 @@ footer {
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 760px) {
   footer {
     margin-top: 5rem;
     & .bottom {
-      padding: 7rem 3rem 20rem 3rem;
       & .wrapper {
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         & .left {
           & a {
-            font-size: 3.5rem;
+            font-size: 3rem;
           }
         }
         & .right {
@@ -106,11 +121,12 @@ footer {
         }
       }
       & p {
+        text-align: center;
         font-size: 1.5rem;
       }
     }
     & .jumpBackUp {
-      border: none;
+      transform: translateY(90%);
       & p {
         font-size: 5rem;
       }

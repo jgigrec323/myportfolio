@@ -61,3 +61,20 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .menu {
+    padding: 2rem 2rem;
+    & .middle {
+      & li {
+        font-size: 4rem;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    & .bottom {
+      font-size: 2rem;
+    }
+  }
+}

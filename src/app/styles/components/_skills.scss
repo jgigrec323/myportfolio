@@ -1,5 +1,6 @@
 section.skills {
   margin-top: 7rem;
+  position: relative;
   & .mySkills {
     padding: 0 10rem;
     margin-top: 10rem;
@@ -16,6 +17,7 @@ section.skills {
 
 @media screen and (max-width: 1250px) {
   section.skills {
+    margin-top: -3rem;
     & .mySkills {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       padding: 7rem 0;
@@ -28,6 +30,7 @@ section.skills {
 
 @media screen and (max-width: 480px) {
   section.skills {
+    margin-top: -4rem;
     & .mySkills {
       grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
       padding: 4rem 0;
@@ -39,5 +42,11 @@ section.skills {
         height: 50px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  section.skills {
+    margin-top: 18rem;
   }
 }

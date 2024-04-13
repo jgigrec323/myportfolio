@@ -1,14 +1,16 @@
 section.services {
   & .allServices {
+    position: relative;
     margin-top: 5rem;
     & .singleService {
       margin: 4rem auto;
       display: flex;
-      gap: 30rem;
-      &:hover {
-      }
+      justify-content: center;
       & .serviceNo {
         font-size: 2.5rem;
+        position: absolute;
+        top: -20%;
+        left: 0;
       }
       & .serviceInfos {
         width: 50vw;
@@ -36,22 +38,53 @@ section.services {
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1150px) {
   section.services {
     & .allServices {
       & .singleService {
-        position: relative;
-        justify-content: center;
-        & .serviceNo {
-          position: absolute;
-          top: -20%;
-          left: 0;
-        }
         & .serviceInfos {
           width: fit-content;
           gap: 1.5rem;
           & h3 {
-            font-size: 6rem;
+            font-size: 8rem;
+          }
+          & .process {
+            & span {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  section.services {
+    & .allServices {
+      & .singleService {
+        & .serviceInfos {
+          & h3 {
+            font-size: 7rem;
+          }
+          & .process {
+            & span {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section.services {
+    & .allServices {
+      & .singleService {
+        & .serviceInfos {
+          & h3 {
+            font-size: 4rem;
           }
           & .process {
             & span {
