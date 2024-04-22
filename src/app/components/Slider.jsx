@@ -12,7 +12,7 @@ function Slider() {
     const sliderRef = useRef(null)
     const descRef = useRef(null)
     const mobileBreak = 1150
-    const isMobile = window.innerWidth >= 768 ? true : false
+    let isMobile = false;
     const projects = [
         {
             name: "ProCard",
@@ -52,7 +52,7 @@ function Slider() {
     ]
 
     useGSAP(() => {
-
+        isMobile = window.innerWidth >= 768 ? true : false
         gsap.registerPlugin(ScrollTrigger);
         const sections = gsap.utils.toArray(".slider section");
 
@@ -120,7 +120,7 @@ function Slider() {
             }
         })
         console.log(projects.length)
-    }, [window.innerWidth])
+    }, [isMobile])
     return (
         <div className="outer">
             <div className="slider" ref={sliderRef}>
@@ -143,7 +143,9 @@ function Slider() {
                                         <Image src={project.img} fill={true} alt={`Project ${index + 1}`} />
                                     </div>
                                     <div className="projectActions">
-                                        <button className="btn">More about this</button>
+                                        <button className="btn">
+                                            <a href={project.name.replace(/\s+/g, '').toLowerCase()}>More about this</a>
+                                        </button>
                                     </div>
                                 </div>
                             </Tilt>

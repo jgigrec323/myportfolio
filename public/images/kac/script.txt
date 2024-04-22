@@ -1,0 +1,3 @@
+Introducing Kac—an agile shipping services enterprise headquartered in Canada. Specializing in freight delivery, relocation assistance, and transportation services, Kac is committed to providing efficient and reliable solutions to its clients.
+
+As the architect behind their online presence, I crafted a dynamic website using React.js as the primary frontend framework. This innovative platform not only features user-friendly forms for gathering requests but also serves as a showcase for Kac's extensive portfolio of services and their close-knit relationships with clients. It's a testament to Kac's dedication to excellence and my passion for creating impactful digital experiences.

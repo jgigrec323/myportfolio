@@ -1,0 +1,3 @@
+Hadja Maimouna Yombouno, the distinguished First Vice President of Guinea's National Transitional Council as of 2023, presents her portfolio through this sleek and informative website. Crafted with simplicity and elegance, the single-page design showcases her notable accomplishments and contributions.
+
+Built using simple HTML, CSS (Sass), and JavaScript, the website features a captivating gallery, sections highlighting her recent media references, and other cool features. Its clean layout and intuitive navigation provide visitors with an engaging glimpse into Hadja Maimouna's impactful journey and professional endeavors.
