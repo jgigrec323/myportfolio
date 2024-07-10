@@ -3,12 +3,18 @@ import { useGSAP } from '@gsap/react';
 import React, { useRef } from 'react';
 import gsap from "gsap";
 import SplitType from 'split-type';
+import { useRouter } from 'next/navigation'
 function Hero() {
     const text1 = useRef(null);
     const text2 = useRef(null);
     const btn = useRef(null);
     const mainText = useRef(null);
     const mobileBreak = 1150
+    const router = useRouter()
+
+    const handleOnClick = () => {
+        router.push("/contact")
+    }
 
     useGSAP(() => {
         //here simulating the entrance animation
@@ -93,7 +99,7 @@ function Hero() {
                 <div>Full stack <span className='myc'>Web & Mobile</span></div>
                 <div>Developer</div>
             </div>
-            <button className='btn' ref={btn}>
+            <button className='btn' ref={btn} onClick={handleOnClick}>
                 <div>
                     <span className='text1' ref={text1}>Got a project ?</span>
                     <span className='text2' ref={text2}>Let's talk</span>

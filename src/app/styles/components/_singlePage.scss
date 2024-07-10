@@ -1,76 +1,202 @@
 main.singlePage {
-  & .top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    & .title {
-      font-weight: bold;
-      font-style: italic;
-      font-size: 25rem;
-      text-transform: uppercase;
-      text-align: center;
+    & .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .title {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 25rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        & .year {
+            font-weight: normal;
+        }
     }
-    & .year {
-      font-weight: normal;
+    & .mainImage {
+        margin-top: 5rem;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: 30% center;
+        }
     }
-  }
-  & .mainImage {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: 30% center;
+    & .firstDescription {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .desc {
+            flex: 1;
+            font-size: 3rem;
+        }
+        & .secondImage {
+            flex: 2;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            transform: translateX(25%);
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
     }
-  }
-  & .firstDescription {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    & .desc {
-      flex: 1;
-      font-size: 3rem;
+    & .lastSection {
+        position: relative;
+        margin-top: 20rem;
+        display: flex;
+        justify-content: center;
+        & .secondDescription {
+            text-align: center;
+            width: 70%;
+        }
     }
-    & .secondImage {
-      flex: 2;
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-      transform: translateX(25%);
-      & img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+    & .imgs {
+        position: relative;
+        width: 100vw;
+        height: 70vh;
+        &>div {
+            position: absolute;
+            display: inline-block;
+            width: 45%;
+            height: 60rem;
+            scale: 1.5;
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
     }
-  }
-  & .lastSection {
-    position: relative;
-    margin-top: 20rem;
-    display: flex;
-    justify-content: center;
-    & .secondDescription {
-      text-align: center;
-      width: 70%;
+}
+
+@media screen and (max-width: 850px) {
+    main.singlePage {
+        & .top {
+            margin-top: 8rem;
+            & .title {
+                font-size: 10rem;
+            }
+        }
+        & .mainImage {
+            margin-bottom: 6rem;
+            height: 50vh;
+            & img {
+                transform: translateX(-4%) translateY(0%);
+            }
+        }
+        & .firstDescription {
+            flex-direction: column;
+            & .desc {
+                flex: inherit;
+            }
+            & .secondImage {
+                margin-top: 5rem;
+                margin-bottom: 5rem;
+                flex: inherit;
+                height: 50vh;
+                transform: translateX(0%);
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+        & .lastSection {
+            margin-top: 1rem;
+            & .secondDescription {
+                width: fit-content;
+                font-size: 3rem;
+                text-align: start;
+            }
+        }
+        & .imgs {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 5rem;
+            &>div {
+                position: relative !important;
+                display: inline-block;
+                width: 20rem;
+                height: 20rem;
+                scale: 1 !important;
+                & img {
+                    object-fit: contain;
+                }
+            }
+        }
     }
-  }
-  & .imgs {
-    position: relative;
-    width: 100vw;
-    height: 70vh;
-    & > div {
-      position: absolute;
-      display: inline-block;
-      width: 45%;
-      height: 60rem;
-      scale: 1.5;
-      & img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+}
+
+@media screen and (max-width: 480px) {
+    main.singlePage {
+        & .top {
+            margin-top: 5rem;
+            & .title {
+                font-size: 7rem;
+            }
+        }
+        & .mainImage {
+            margin-bottom: 0rem;
+            height: 50vh;
+            & img {
+                transform: translateX(-8%) translateY(-10%);
+            }
+        }
+        & .firstDescription {
+            flex-direction: column;
+            & .desc {
+                flex: inherit;
+            }
+            & .secondImage {
+                margin-top: 0rem;
+                margin-bottom: 0rem;
+                flex: inherit;
+                height: 50vh;
+                transform: translateX(0%);
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+        & .lastSection {
+            margin-top: 1rem;
+            & .secondDescription {
+                width: fit-content;
+                font-size: 3rem;
+                text-align: start;
+            }
+        }
+        & .imgs {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            &>div {
+                position: relative !important;
+                display: inline-block;
+                width: 20rem;
+                height: 20rem;
+                scale: 1 !important;
+                & img {
+                    object-fit: contain;
+                }
+            }
+        }
     }
-  }
 }

@@ -1,0 +1,94 @@
+section.contact {
+  padding-top: 10rem;
+  & > h1 {
+    margin-bottom: 8rem;
+  }
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    & .firstRow {
+      & h3 {
+        margin-bottom: 4rem;
+        font-weight: normal;
+      }
+      & .services {
+        display: flex;
+        gap: 5rem;
+        & .singleService {
+          padding: 1rem 3rem;
+          border: 2px solid $blue;
+          font-size: 3.5rem;
+          border-radius: 5rem;
+          cursor: pointer;
+          &.selected {
+            background-color: $blue;
+            color: $black;
+          }
+        }
+      }
+    }
+    & .secondRow {
+      & h3 {
+        margin-bottom: 4rem;
+        font-weight: normal;
+      }
+      & .budgets {
+        display: flex;
+        gap: 5rem;
+        & .singleBudget {
+          padding: 1rem 3rem;
+          border: 2px solid $blue;
+          font-size: 3.5rem;
+          border-radius: 5rem;
+          cursor: pointer;
+          &.selected {
+            background-color: $blue;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  & form {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10rem;
+    column-gap: 5rem;
+    & input,
+    & textarea {
+      background: none;
+      height: 10rem;
+      border: none;
+      border-bottom: 2px solid $blue;
+      font-size: 3.5rem;
+      outline: none;
+      color: $blue;
+      font-family: "Futura", sans-serif;
+      &::placeholder {
+        color: $blue;
+      }
+    }
+    & textarea {
+      font-family: "Futura", sans-serif;
+      grid-column: span 2;
+    }
+    & .discuss {
+      margin: 5rem 0 10rem 0;
+      & button {
+        font-size: 6rem;
+        font-weight: bold;
+        font-style: italic;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-underline-offset: 0.8rem;
+        cursor: pointer;
+        font-family: "Futura";
+        border: none;
+        background: none;
+        color: $blue;
+      }
+    }
+  }
+}

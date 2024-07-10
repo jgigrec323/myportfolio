@@ -3,9 +3,16 @@ import React from 'react'
 import SectionTitle from './SectionTitle'
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap"
+import { useRouter } from 'next/navigation'
 
 function Services() {
     //TODO: have to manage the onclick on services
+    const router = useRouter()
+
+    const handleOnClick = () => {
+        console.log("h")
+        router.push("/contact")
+    }
 
     useGSAP(() => {
         const services = gsap.utils.toArray(".allServices .singleService");
@@ -29,7 +36,7 @@ function Services() {
             <SectionTitle title={"Services"}></SectionTitle>
             <div className="allServices">
                 <div className="serviceDivider"></div>
-                <div className="singleService scaleUp">
+                <div className="singleService scaleUp" onClick={() => handleOnClick}>
                     <span className="serviceNo">01</span>
                     <div className="serviceInfos">
                         <h3>Web design</h3>
@@ -42,7 +49,7 @@ function Services() {
                 </div>
 
                 <div className="serviceDivider"></div>
-                <div className="singleService scaleUp">
+                <div className="singleService scaleUp" onClick={() => handleOnClick}>
                     <span className="serviceNo">02</span>
                     <div className="serviceInfos">
                         <h3>Web development</h3>
@@ -53,7 +60,7 @@ function Services() {
                     </div>
                 </div>
                 <div className="serviceDivider"></div>
-                <div className="singleService scaleUp">
+                <div className="singleService scaleUp" onClick={() => handleOnClick}>
                     <span className="serviceNo">03</span>
                     <div className="serviceInfos">
                         <h3>Mobile apps</h3>
