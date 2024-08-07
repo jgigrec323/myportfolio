@@ -7,35 +7,18 @@ section.contact {
     display: flex;
     flex-direction: column;
     gap: 8rem;
-    & .firstRow {
-      & h3 {
-        margin-bottom: 4rem;
-        font-weight: normal;
-      }
-      & .services {
-        display: flex;
-        gap: 5rem;
-        & .singleService {
-          padding: 1rem 3rem;
-          border: 2px solid $blue;
-          font-size: 3.5rem;
-          border-radius: 5rem;
-          cursor: pointer;
-          &.selected {
-            background-color: $blue;
-            color: $black;
-          }
-        }
-      }
-    }
+    & .firstRow,
     & .secondRow {
       & h3 {
         margin-bottom: 4rem;
         font-weight: normal;
       }
+      & .services,
       & .budgets {
         display: flex;
+        flex-wrap: wrap;
         gap: 5rem;
+        & .singleService,
         & .singleBudget {
           padding: 1rem 3rem;
           border: 2px solid $blue;
@@ -88,6 +71,87 @@ section.contact {
         border: none;
         background: none;
         color: $blue;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    & form {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 768px) {
+    padding-top: 5rem;
+    & > h1 {
+      margin-bottom: 4rem;
+      font-size: 4rem;
+    }
+    & .wrapper {
+      gap: 4rem;
+      & .firstRow,
+      & .secondRow {
+        & h3 {
+          margin-bottom: 2rem;
+          font-size: 2.5rem;
+        }
+        & .services,
+        & .budgets {
+          gap: 2rem;
+          & .singleService,
+          & .singleBudget {
+            font-size: 2rem;
+            padding: 0.5rem 1.5rem;
+          }
+        }
+      }
+    }
+    & form {
+      row-gap: 5rem;
+      column-gap: 2.5rem;
+      & input,
+      & textarea {
+        height: 5rem;
+        font-size: 2rem;
+      }
+      & .discuss button {
+        font-size: 4rem;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    padding-top: 2rem;
+    & > h1 {
+      margin-bottom: 3rem;
+      font-size: 5rem;
+    }
+    & .wrapper {
+      gap: 3rem;
+      & .firstRow,
+      & .secondRow {
+        & h3 {
+          margin-bottom: 1rem;
+          font-size: 2.5rem;
+        }
+        & .services,
+        & .budgets {
+          gap: 1rem;
+          & .singleService,
+          & .singleBudget {
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+    & form {
+      row-gap: 2.5rem;
+      column-gap: 1.25rem;
+      & input,
+      & textarea {
+        height: 4rem;
+        font-size: 1.5rem;
+      }
+      & .discuss button {
+        font-size: 3rem;
       }
     }
   }
