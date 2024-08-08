@@ -17,37 +17,37 @@ function Slider() {
     {
       name: "ProCard",
       year: 2024,
-      img: "/images/procard/1.png",
+      img: `${process.env.BASE_PATH}/images/procard/1.png`,
     },
     {
       name: "GEGAPOS",
       year: 2023,
-      img: "/images/gegapos/1.png",
+      img: `${process.env.BASE_PATH}/images/gegapos/1.png`,
     },
     {
       name: "Kac",
       year: 2023,
-      img: "/images/kac/1.png",
+      img: `${process.env.BASE_PATH}/images/kac/1.png`,
     },
     {
       name: "Hadja Maimouna",
       year: 2023,
-      img: "/images/hadjaM/1.png",
+      img: `${process.env.BASE_PATH}/images/hadjaM/1.png`,
     },
     {
       name: "Village Gandal",
       year: 2023,
-      img: "/images/villagegandal/1.png",
+      img: `${process.env.BASE_PATH}/images/villagegandal/1.png`,
     },
     {
       name: "Dreaminati Store",
       year: 2023,
-      img: "/images/dreaminati/1.png",
+      img: `${process.env.BASE_PATH}/images/dreaminati/1.png`,
     },
     {
       name: "Boundless",
       year: 2024,
-      img: "/images/boundless/1.png",
+      img: `${process.env.BASE_PATH}/images/boundless/1.png`,
     },
   ];
 

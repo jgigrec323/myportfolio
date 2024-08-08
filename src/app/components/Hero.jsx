@@ -97,7 +97,7 @@ function Hero() {
     <div className="hero">
       <div className="mainText" ref={mainText}>
         <div>
-          Hey ! I'm <span className="myname">Jean Galant .</span>
+          Hey ! {`I'm`} <span className="myname">Jean Galant .</span>
         </div>
         <div>
           Full stack <span className="myc">Web & Mobile</span>
