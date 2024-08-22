@@ -89,7 +89,7 @@ function SinglePage({ infos }) {
 
       return (
         <div key={index} className="imgToOverlay" style={imgStyle}>
-          <Image src={img} alt={`Image ${index}`} fill={true}></Image>
+          <img src={img} alt={`Image ${index}`}></img>
         </div>
       );
     });
@@ -104,12 +104,12 @@ function SinglePage({ infos }) {
           <h5 className="year">{infos.year}</h5>
         </div>
         <div className="mainImage">
-          <Image src={infos.mainImg} alt={infos.title} fill></Image>
+          <img src={infos.mainImg} alt={infos.title}></img>
         </div>
         <section className="firstDescription">
           <p className="desc">{infos.firstText}</p>
           <div className="secondImage">
-            <Image src={infos.secondImg} alt={infos.title} fill={true}></Image>
+            <img src={infos.secondImg} alt={infos.title}></img>
           </div>
         </section>
         <section className="lastSection">

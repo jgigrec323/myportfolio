@@ -1,17 +1,20 @@
-export default async function sendEmail(formData) {
+export default async function emailSender(formData) {
   try {
-    console.log(formData);
-    const response = await fetch("http://localhost:3000/api/email", {
+    const response = await fetch("/api/email", {
       method: "POST",
-      body: JSON.stringify(formData),
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify(formData),
     });
-    if (response.ok) {
-      return response;
+
+    if (!response.ok) {
+      throw new Error(`Failed to send email: ${response.statusText}`);
     }
+
+    return await response.json();
   } catch (error) {
+    console.error("Error sending email:", error);
     throw error;
   }
 }

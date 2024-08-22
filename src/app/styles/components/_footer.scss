@@ -32,9 +32,9 @@ footer {
         & svg {
           width: 4rem;
           cursor: pointer;
-          &:not(:last-child) {
-            margin-right: 2rem;
-          }
+        }
+        a:not(:last-child) {
+          margin-right: 2rem;
         }
       }
     }
@@ -81,9 +81,9 @@ footer {
         & .right {
           & svg {
             width: 2.2rem;
-            &:not(:last-child) {
-              margin-right: 1rem;
-            }
+          }
+          a:not(:last-child) {
+            margin-right: 2rem;
           }
         }
       }
@@ -114,9 +114,9 @@ footer {
         & .right {
           & svg {
             width: 2.5rem;
-            &:not(:last-child) {
-              margin-right: 2rem;
-            }
+          }
+          a:not(:last-child) {
+            margin-right: 2rem;
           }
         }
       }

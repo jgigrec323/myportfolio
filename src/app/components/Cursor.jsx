@@ -3,10 +3,12 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useAppContext } from "../context/AppContext";
+import { useRouter } from "next/navigation";
 
 function Cursor() {
   const cursorRef = useRef(null);
   const { isMenuOpen } = useAppContext();
+  const router = useRouter();
 
   const moveCursor = (e) => {
     if (cursorRef.current) {

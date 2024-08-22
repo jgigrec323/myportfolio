@@ -17,37 +17,37 @@ function Slider() {
     {
       name: "ProCard",
       year: 2024,
-      img: `${process.env.BASE_PATH}/images/procard/1.png`,
+      img: `/images/procard/1.png`,
     },
     {
       name: "GEGAPOS",
       year: 2023,
-      img: `${process.env.BASE_PATH}/images/gegapos/1.png`,
+      img: `/images/gegapos/1.png`,
     },
     {
       name: "Kac",
       year: 2023,
-      img: `${process.env.BASE_PATH}/images/kac/1.png`,
+      img: `/images/kac/1.png`,
     },
     {
       name: "Hadja Maimouna",
       year: 2023,
-      img: `${process.env.BASE_PATH}/images/hadjaM/1.png`,
+      img: `/images/hadjaM/1.png`,
     },
     {
       name: "Village Gandal",
       year: 2023,
-      img: `${process.env.BASE_PATH}/images/villagegandal/1.png`,
+      img: `/images/villagegandal/1.png`,
     },
     {
       name: "Dreaminati Store",
       year: 2023,
-      img: `${process.env.BASE_PATH}/images/dreaminati/1.png`,
+      img: `/images/dreaminati/1.png`,
     },
     {
       name: "Boundless",
       year: 2024,
-      img: `${process.env.BASE_PATH}/images/boundless/1.png`,
+      img: `/images/boundless/1.png`,
     },
   ];
 
@@ -152,11 +152,7 @@ function Slider() {
                   <h3 className="projectTitle">{project.name}</h3>
                   <h4 className="projectYear">{project.year}</h4>
                   <div className="projectImage">
-                    <Image
-                      src={project.img}
-                      fill={true}
-                      alt={`Project ${index + 1}`}
-                    />
+                    <img src={project.img} alt={`Project ${index + 1}`} />
                   </div>
                   <div className="projectActions">
                     <button className="btn">
@@ -172,11 +168,7 @@ function Slider() {
                 <h3 className="projectTitle">{project.name}</h3>
                 <h4 className="projectYear">{project.year}</h4>
                 <div className="projectImage">
-                  <Image
-                    src={project.img}
-                    fill={true}
-                    alt={`Project ${index + 1}`}
-                  />
+                  <img src={project.img} alt={`Project ${index + 1}`} />
                 </div>
                 <div className="projectActions">
                   <button className="btn">

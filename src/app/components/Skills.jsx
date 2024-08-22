@@ -43,132 +43,132 @@ function Skills() {
       </p>
       <div className="mySkills">
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/next-js.png`}
+          <img
+            src={`/images/next-js.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/react-js.png`}
+          <img
+            src={`/images/react-js.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/html.png`}
+          <img
+            src={`/images/html.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/css.png`}
+          <img
+            src={`/images/css.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/js.png`}
+          <img
+            src={`/images/js.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/sass.png`}
+          <img
+            src={`/images/sass.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/threejs.png`}
+          <img
+            src={`/images/threejs.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/gsap.png`}
+          <img
+            src={`/images/gsap.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/dart.png`}
+          <img
+            src={`/images/dart.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/flutter.png`}
+          <img
+            src={`/images/flutter.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/java.png`}
+          <img
+            src={`/images/java.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/nodejs.png`}
+          <img
+            src={`/images/nodejs.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/sql.png`}
+          <img
+            src={`/images/sql.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/mongodb.png`}
+          <img
+            src={`/images/mongodb.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/restapi.png`}
+          <img
+            src={`/images/restapi.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
         <div className="skillLogo">
-          <Image
-            src={`${process.env.BASE_PATH}/images/xd.png`}
+          <img
+            src={`/images/xd.png`}
             width={80}
             height={80}
             alt="Skillset"
-          ></Image>
+          ></img>
         </div>
       </div>
     </section>
