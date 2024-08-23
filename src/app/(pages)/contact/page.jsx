@@ -36,9 +36,9 @@ function Contact() {
       const response = await emailSender(data);
       console.log(response);
       alert("Email sent successfully!");
-      event.target.reset(); // Reset the form after successful submission
-      setSelectedService(""); // Reset selected service
-      setSelectedBudget(""); // Reset selected budget
+      event.target.reset();
+      setSelectedService("");
+      setSelectedBudget("");
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Failed to send email. Please try again later.");
