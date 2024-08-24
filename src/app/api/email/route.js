@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -22,7 +23,7 @@ export async function POST(request) {
 
     // Email options
     const mailOptions = {
-      from: '"Your Website" <hello@jeangalant.com>', // Sender address
+      from: '"Jean Galant" <hello@jeangalant.com>', // Sender address
       to: "hello@jeangalant.com", // Recipient address (your own email)
       subject: `New Service Request from ${name}`, // Subject line
       text: `

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 
 function Slider() {
   const sliderRef = useRef(null);
+  const outerRef = useRef(null);
   const descRef = useRef(null);
   const mobileBreak = 1150;
   const router = useRouter();
@@ -56,12 +57,25 @@ function Slider() {
     gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray(".slider section");
 
-    const projectWidth = 630;
+    const projectWidth = sections[1].offsetWidth; // Assuming the first section is the text
+    const gapBetweenProjects = parseFloat(
+      getComputedStyle(sliderRef.current).gap
+    );
     const numProjects = projects.length;
-    const totalWidth = projectWidth * numProjects;
+    const totalWidth =
+      projectWidth * (numProjects - 1) + gapBetweenProjects * numProjects - 1; // including the text section
     const sliderWidth = sliderRef.current.offsetWidth;
-    const xPercentValue = ((totalWidth - sliderWidth) / totalWidth) * 100;
 
+    const xPercentValue = -(totalWidth / sliderWidth) * 100;
+
+    console.log(
+      projectWidth,
+      numProjects,
+      totalWidth,
+      sliderWidth,
+      xPercentValue,
+      gapBetweenProjects
+    );
     if (window.innerWidth >= mobileBreak) {
       let tl = gsap.timeline({
         defaults: {
@@ -116,7 +130,6 @@ function Slider() {
         toggleActions: "play none none reverse",
       },
     });
-    console.log(projects.length);
   }, [isMobile]);
 
   const handleCardClick = (projectName) => {
@@ -124,7 +137,7 @@ function Slider() {
   };
 
   return (
-    <div className="outer">
+    <div className="outer" ref={outerRef}>
       <div className="slider" ref={sliderRef}>
         <section className="text" ref={descRef}>
           <p>

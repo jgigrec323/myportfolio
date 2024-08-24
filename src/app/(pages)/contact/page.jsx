@@ -24,6 +24,12 @@ function Contact() {
     const email = formData.get("email");
     const projectDetails = formData.get("projectDetails");
 
+    // Validation
+    if (!name || !email || !selectedService || !selectedBudget) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
     const data = {
       name,
       email,
@@ -33,8 +39,7 @@ function Contact() {
     };
 
     try {
-      const response = await emailSender(data);
-      console.log(response);
+      await emailSender(data);
       alert("Email sent successfully!");
       event.target.reset();
       setSelectedService("");

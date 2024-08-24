@@ -51,7 +51,7 @@ function Cursor() {
       });
     });
 
-    if (isMenuOpen) {
+    /* if (isMenuOpen) {
       const navLinks = document.querySelectorAll(".menu .navLink");
       navLinks.forEach((el) => {
         el.addEventListener("mouseenter", () => {
@@ -65,7 +65,7 @@ function Cursor() {
           });
         });
       });
-    }
+    } */
   }, [isMenuOpen]);
 
   return (

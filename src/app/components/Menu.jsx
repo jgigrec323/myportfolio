@@ -88,14 +88,6 @@ function Menu() {
     }
   };
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "scroll";
-    }
-  }, [isMenuOpen]);
-
   return (
     <div className="menu" ref={menuRef}>
       <div className="top">
