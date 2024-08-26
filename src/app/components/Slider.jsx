@@ -57,7 +57,7 @@ function Slider() {
     gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray(".slider section");
 
-    const projectWidth = sections[1].offsetWidth; // Assuming the first section is the text
+    const projectWidth = sections[1].offsetWidth;
     const gapBetweenProjects = parseFloat(
       getComputedStyle(sliderRef.current).gap
     );
