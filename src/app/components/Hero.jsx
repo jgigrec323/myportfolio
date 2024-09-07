@@ -29,9 +29,9 @@ function Hero() {
         opacity: 0,
         rotate: "20deg",
         scaleY: 0.5,
-        duration: 0.4,
+        duration: 0.2,
         stagger: 0.05,
-        delay: 0.5,
+        delay: 0.3,
       });
 
       if (window.innerWidth >= mobileBreak) {
@@ -53,11 +53,11 @@ function Hero() {
     }
     gsap.from(btn.current, {
       opacity: 0,
-      delay: 3.2,
+      delay: 3,
     });
     gsap.from(".scrollIndicator", {
       opacity: 0,
-      delay: 3.5,
+      delay: 3.3,
     });
 
     const tl = gsap.timeline({ paused: true });

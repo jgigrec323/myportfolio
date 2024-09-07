@@ -10,7 +10,7 @@ function Menu() {
   const menuRef = useRef(null);
   const closeBtnRef = useRef(null);
   const spitLink = useRef(null);
-  const { isMenuOpen, setIsMenuOpen } = useAppContext();
+  const { isMenuOpen, setIsMenuOpen, setIsMenuItemClicked } = useAppContext();
   const currentPath = usePathname();
   const router = useRouter();
 
@@ -32,9 +32,9 @@ function Menu() {
         gsap.from(linkSplit.chars, {
           yPercent: 100,
           scaleY: 0.5,
-          duration: 0.5,
+          duration: 0.4,
           stagger: 0.05,
-          delay: 0.7,
+          delay: 0.4,
         });
         if (window.innerWidth >= 1150 && isMenuOpen) {
           linkSplit.chars.forEach((letter) => {
@@ -58,33 +58,49 @@ function Menu() {
     gsap.from(".menu .bottom a", {
       opacity: 0,
       stagger: 0.05,
-      duration: 0.5,
-      delay: 1.3,
+      duration: 0.3,
+      delay: 1,
     });
     gsap.from(".menu .top .logo", {
       opacity: 0,
-      duration: 0.5,
-      delay: 1,
+      duration: 0.3,
+      delay: 0.7,
     });
     gsap.from(".menu .top .closeBtn", {
       opacity: 0,
-      duration: 0.5,
-      delay: 1,
+      duration: 0.3,
+      delay: 0.7,
     });
   }, [isMenuOpen]);
 
   const handleLocalLinkClick = (e) => {
-    e.preventDefault();
-    setIsMenuOpen(!isMenuOpen);
-    const targetId = e.target.offsetParent.getAttribute("href").substring(1);
+    e.preventDefault(); // Prevent the default anchor behavior
+    setIsMenuItemClicked(true); // Set the menu item clicked state
+    setIsMenuOpen(false); // Close the menu
 
-    if (currentPath === "/") {
-      const targetEl = document.getElementById(targetId);
-      targetEl.scrollIntoView({
-        behavior: "smooth",
-      });
+    const targetLink = e.target.closest("a"); // Get the anchor element
+    const href = targetLink.getAttribute("href");
+
+    if (href.startsWith("#")) {
+      // **Internal Hash Link**
+      const targetId = href.substring(1); // Extract the target id
+
+      if (currentPath === "/") {
+        // If on the homepage, scroll to the section
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          window.history.pushState(null, null, `#${targetId}`); // Update the URL hash
+          targetEl.scrollIntoView({
+            behavior: "smooth", // Smooth scroll to the section
+          });
+        }
+      } else {
+        // If on a different page, navigate to the homepage with the hash
+        router.push(`/#${targetId}`);
+      }
     } else {
-      router.push(`/#${targetId}`);
+      // **Route Link**
+      router.push(href); // Navigate to the route (e.g., /contact)
     }
   };
 
@@ -100,7 +116,7 @@ function Menu() {
         </div>
       </div>
       <ul className="middle">
-        <li className="navLink">
+        <li className="navLink" onClick={handleLocalLinkClick}>
           <a href="/">Home</a>
         </li>
         <li className="navLink" onClick={handleLocalLinkClick}>
