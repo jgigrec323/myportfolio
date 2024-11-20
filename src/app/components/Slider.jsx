@@ -16,6 +16,11 @@ function Slider() {
   let isMobile = false;
   const projects = [
     {
+      name: "E-Store",
+      year: 2024,
+      img: `/images/estore/1.png`,
+    },
+    {
       name: "ProCard",
       year: 2024,
       img: `/images/procard/1.png`,
