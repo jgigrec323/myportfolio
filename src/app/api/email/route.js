@@ -1,7 +1,5 @@
-import "dotenv/config";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
 export async function POST(request) {
   try {
     const { selectedService, selectedBudget, name, email, projectDetails } =
